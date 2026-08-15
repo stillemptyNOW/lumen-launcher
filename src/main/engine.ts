@@ -446,8 +446,19 @@ function installLumen(modsDir: string, on: ProgressFn): void {
     on("Lumen jar не найден в resources", 0.92);
     return;
   }
-  fs.copyFileSync(src, path.join(modsDir, path.basename(src)));
-  on(`Lumen: ${path.basename(src)}`, 0.93);
+  // убрать старые lumen-*.jar, чтобы не грузить два мода
+  for (const f of fs.readdirSync(modsDir)) {
+    if (/^lumen-.*\.jar$/i.test(f) || f.toLowerCase() === "lumen.jar") {
+      try {
+        fs.unlinkSync(path.join(modsDir, f));
+      } catch {
+        /* ignore */
+      }
+    }
+  }
+  const destName = path.basename(src);
+  fs.copyFileSync(src, path.join(modsDir, destName));
+  on(`Lumen: ${destName}`, 0.93);
 }
 
 /** Essential — хост миров / друзья / мультиплеер для Lumen 26.2 Fabric. */

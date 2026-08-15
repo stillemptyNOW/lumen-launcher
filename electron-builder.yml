@@ -12,8 +12,8 @@ files:
   - dist-electron/**
   - package.json
 extraResources:
-  - from: resources/lumen-2.0.0.jar
-    to: lumen-2.0.0.jar
+  - from: resources/lumen-2.1.0.jar
+    to: lumen-2.1.0.jar
   - from: resources/launch_helper.py
     to: launch_helper.py
   - from: resources/capes

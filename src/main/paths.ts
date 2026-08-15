@@ -68,9 +68,16 @@ export function skinsRoot(): string {
 }
 
 export function lumenJarPath(): string {
-  const packed = path.join(process.resourcesPath, "lumen-2.0.0.jar");
-  if (fs.existsSync(packed)) return packed;
-  return path.join(app.getAppPath(), "resources", "lumen-2.0.0.jar");
+  const names = ["lumen-2.1.0.jar", "lumen-2.0.0.jar", "lumen.jar"];
+  for (const name of names) {
+    const packed = path.join(process.resourcesPath, name);
+    if (fs.existsSync(packed)) return packed;
+  }
+  for (const name of names) {
+    const dev = path.join(app.getAppPath(), "resources", name);
+    if (fs.existsSync(dev)) return dev;
+  }
+  return path.join(app.getAppPath(), "resources", "lumen-2.1.0.jar");
 }
 
 /** Встроенный плащ PinkPantheress (skinview 64×32 / HD 512). */

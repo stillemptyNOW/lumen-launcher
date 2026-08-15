@@ -1,35 +1,29 @@
-# Lumen Launcher
+﻿# Lumen Launcher
 
-Minecraft Java launcher (Electron + React) for **26.2**: Fabric, Lumen helpers, **Essential** multiplayer, built-in **PinkPantheress** HD cape.
+Minecraft Java launcher for **26.2**: Fabric, Lumen helpers, **Essential**, **Inventory+ / Fast Swap**, PinkPantheress cape.
 
-## Download (friends)
+## Download
 
-Grab the latest installer from **[Releases](https://github.com/stillemptyNOW/lumen-launcher/releases)**:
+**[Releases](https://github.com/stillemptyNOW/lumen-launcher/releases)**
 
-| File | What it is |
-|------|------------|
-| **`LumenLauncher-Setup.exe`** | Windows installer (recommended for friends) |
-| `LumenLauncher.exe` | Portable, no install |
+| File | What |
+|------|------|
+| **LumenLauncher-Setup.exe** / **setup.exe** | Installer |
+| **LumenLauncher.exe** | Portable |
 
-## Features
+## Lumen (Right Shift)
 
-- Microsoft login (device code / Prism public client — no Azure app)
-- Multi-loader: Vanilla, Fabric, Quilt, Forge, NeoForge, OptiFine
-- **Lumen** (Fabric 26.2): Right Shift menu — FullBright, MobESP, particles, XRAY (SP)
-- **Essential** auto-install on Lumen profile — host worlds / friends
-- **PinkPantheress HD cape** in launcher 3D preview **and in-game** (via Lumen)
+| Key | Action |
+|-----|--------|
+| **RShift** | Menu |
+| **G** | Loot All from chest / barrel / shulker |
+| **B** | Deposit All into container |
+| **H** | Deposit matching only |
+| **R** | Fast Swap (offhand) |
+| **X** | Restock hotbar |
+| **C** | Zoom |
 
-## Build from source
-
-```bash
-npm install
-npm run build
-```
-
-Outputs:
-
-- `release/setup.exe`
-- `release/LumenLauncher.exe`
+Tabs: Visual · HUD · World · ESP · **Inv+**
 
 ## Not affiliated
 
