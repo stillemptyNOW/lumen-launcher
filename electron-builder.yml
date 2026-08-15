@@ -1,0 +1,46 @@
+appId: com.lumen.launcher
+productName: Lumen Launcher
+copyright: Copyright © 2026 Lumen
+asar: true
+asarUnpack:
+  - "**/*.node"
+directories:
+  output: release
+  buildResources: resources
+files:
+  - dist/**
+  - dist-electron/**
+  - package.json
+extraResources:
+  - from: resources/lumen-2.0.0.jar
+    to: lumen-2.0.0.jar
+  - from: resources/launch_helper.py
+    to: launch_helper.py
+  - from: resources/capes
+    to: capes
+  - from: resources/mods/Essential_1-4-1-1_fabric_26-2.jar
+    to: Essential_1-4-1-1_fabric_26-2.jar
+win:
+  icon: resources/icon.ico
+  target:
+    - target: portable
+      arch: [x64]
+    - target: nsis
+      arch: [x64]
+  signAndEditExecutable: false
+  artifactName: ${productName}-${version}-${os}-${arch}.${ext}
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Lumen Launcher
+  uninstallDisplayName: Lumen Launcher
+  deleteAppDataOnUninstall: false
+  # нельзя называть просто setup.exe — NSIS warning 9000 → fail
+  artifactName: LumenLauncher-Setup.exe
+portable:
+  artifactName: LumenLauncher.exe
+compression: maximum
+npmRebuild: true

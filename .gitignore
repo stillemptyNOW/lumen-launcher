@@ -1,0 +1,14 @@
+node_modules/
+dist/
+dist-electron/
+release/
+*.log
+.DS_Store
+Thumbs.db
+.env
+.idea/
+.vscode/
+*.map
+*.exe
+resources/mods/
+scripts/good-cmd.json

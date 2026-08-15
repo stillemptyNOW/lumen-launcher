@@ -1,0 +1,42 @@
+{
+  "name": "lumen-launcher",
+  "productName": "Lumen Launcher",
+  "version": "1.0.0",
+  "description": "Minecraft Java launcher — official-style UI, Fabric/Forge/NeoForge/Quilt/OptiFine, Lumen 26.2",
+  "author": "Lumen",
+  "license": "MIT",
+  "main": "dist-electron/main.js",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/build-electron.mjs && electron-builder --win portable nsis --x64",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "electron-store": "^8.2.0",
+    "extract-zip": "^2.0.1",
+    "keytar": "^7.9.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "skinview3d": "^3.4.1",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "electron": "^34.0.2",
+    "electron-builder": "^25.1.8",
+    "esbuild": "^0.25.0",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.11"
+  },
+  "allowScripts": {
+    "electron@34.5.8": true,
+    "esbuild@0.25.12": true,
+    "keytar@7.9.0": true
+  }
+}

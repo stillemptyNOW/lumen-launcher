@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background: #1e1e1f;
+  color: #fff;
+  font-family: Inter, "Noto Sans", "Segoe UI", sans-serif;
+  user-select: none;
+  overflow: hidden;
+}
+
+/* не даём WebGL/canvas «съесть» весь композитинг окна */
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #3e3e42;
+  border-radius: 2px;
+}
+
+.drag {
+  -webkit-app-region: drag;
+}
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+.play-btn {
+  background: linear-gradient(#4c9a2a, #3c8527);
+  border-bottom: 3px solid #2d6a1f;
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+}
+.play-btn:hover {
+  background: linear-gradient(#5aab34, #4c9a2a);
+}
+.play-btn:active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+}
+.play-btn:disabled {
+  opacity: 0.5;
+  transform: none;
+}
